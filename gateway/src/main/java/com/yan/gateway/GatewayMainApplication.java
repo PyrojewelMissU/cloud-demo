@@ -1,4 +1,4 @@
-package com.atguigu.gateway;
+package com.yan.gateway;
 
 
 import org.springframework.boot.SpringApplication;

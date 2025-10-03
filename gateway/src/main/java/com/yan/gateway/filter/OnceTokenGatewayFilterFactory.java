@@ -1,4 +1,4 @@
-package com.atguigu.gateway.filter;
+package com.yan.gateway.filter;
 
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;

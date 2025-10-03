@@ -1,9 +1,8 @@
-package com.atguigu.gateway.predicate;
+package com.yan.gateway.predicate;
 
 import jakarta.validation.constraints.NotEmpty;
 import org.springframework.cloud.gateway.handler.predicate.AbstractRoutePredicateFactory;
 import org.springframework.cloud.gateway.handler.predicate.GatewayPredicate;
-import org.springframework.cloud.gateway.handler.predicate.QueryRoutePredicateFactory;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
