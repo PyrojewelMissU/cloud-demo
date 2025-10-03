@@ -1,0 +1,52 @@
+server:
+  port: 8000
+spring:
+  profiles:
+    active: dev
+    # 该配置表示在当前应用启动时，会包含并加载名为 feign 的配置文件或配置集。
+    # 用途：通常用于启用与 Feign 相关的配置。Feign 是 Spring Cloud 中用于声明式 REST 客户端的一个组件，
+    # 通过 include: feign 可以加载 Feign 的相关设置，比如日志、超时时间等。
+    include: feign
+  application:
+    name: service-order
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        import-check:
+          enabled: false
+        namespace: ${spring.profiles.active:public}
+
+
+logging:
+  level:
+    #指定feign接口所在的包的日志级别为debug级别
+    com.yan.order.feign: debug
+---
+spring:
+  config:
+    import:
+      - nacos:common.properties?group=order
+      - nacos:database.properties?group=order
+    activate:
+      on-profile: dev
+
+---
+spring:
+  config:
+    import:
+      - nacos:common.properties?group=order
+      - nacos:database.properties?group=order
+      - nacos:haha.properties?group=order
+    activate:
+      on-profile: test
+
+---
+spring:
+  config:
+    import:
+      - nacos:common.properties?group=order
+      - nacos:database.properties?group=order
+      - nacos:hehehe.properties?group=order
+    activate:
+      on-profile: prod
